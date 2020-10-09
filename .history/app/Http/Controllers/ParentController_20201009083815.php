@@ -74,7 +74,7 @@ class ParentController extends Controller
         $specialityId = Speciality::findOrFail($request->speciality_id);
         $specialityId->users()->attach($user);
         $niveauId = Niveau::findOrFail($request->niveau_id);
-        $niveauId->users()->attache($user);
+        
 
         return response()->json([
             "success" => true,

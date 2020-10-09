@@ -6,7 +6,6 @@ use DateTime;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Ecole;
-use App\Models\Niveau;
 use App\Models\Parents;
 use App\Models\Speciality;
 use Symfony\Component\HttpFoundation\Request;
@@ -71,10 +70,11 @@ class ParentController extends Controller
         $roleId = Role::findOrFail(7);
         $user->save();
         $roleId->users()->attach($user);
-        $specialityId = Speciality::findOrFail($request->speciality_id);
-        $specialityId->users()->attach($user);
-        $niveauId = Niveau::findOrFail($request->niveau_id);
-        $niveauId->users()->attache($user);
+        $ecoleId = Ecole::findOrFail($request->parent_id);
+        $ecoleId->users()->attach($user);
+        $speciality = $ecoleId->specialities();
+        dd
+        $pecialty = Speciality::findOrFail();
 
         return response()->json([
             "success" => true,

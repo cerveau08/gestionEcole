@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use DateTime;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\Ecole;
-use App\Models\Niveau;
 use App\Models\Parents;
-use App\Models\Speciality;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -71,10 +68,7 @@ class ParentController extends Controller
         $roleId = Role::findOrFail(7);
         $user->save();
         $roleId->users()->attach($user);
-        $specialityId = Speciality::findOrFail($request->speciality_id);
-        $specialityId->users()->attach($user);
-        $niveauId = Niveau::findOrFail($request->niveau_id);
-        $niveauId->users()->attache($user);
+        $ecoleId = Ecole::
 
         return response()->json([
             "success" => true,
