@@ -17,7 +17,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
             'port' => $DATABASE_URL["port"],
             'database' => ltrim($DATABASE_URL["path"], "/"),
             'username' => $DATABASE_URL["user"],
-            'password' => $DATABASE_URL["pass"],
+            'password' => $DA,
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
