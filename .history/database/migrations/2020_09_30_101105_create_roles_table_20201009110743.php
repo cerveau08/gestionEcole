@@ -16,7 +16,12 @@ class CreateRolesTable extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('libele');
-            $table->timestamps();
+            $table->timestamp('update_at');
+            $table->timestamp('created_at');
+        });
+
+        Schema::table('roles', function (Blueprint $table) {
+            $table->dropColumn(['updated_at', 'created_at']);
         });
     }
 

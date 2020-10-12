@@ -18,6 +18,10 @@ class CreateRolesTable extends Migration
             $table->string('libele');
             $table->timestamps();
         });
+
+        Schema::table('roles', function (Blueprint $table) {
+            $table->dropColumn(['updated_at', 'created_at']);
+        });
     }
 
     /**

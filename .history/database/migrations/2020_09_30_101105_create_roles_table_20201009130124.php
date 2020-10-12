@@ -16,7 +16,8 @@ class CreateRolesTable extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('libele');
-            $table->timestamps();
+            $table->timestamps('updated_at');
+            $table->timestamps('created_at');
         });
     }
 
